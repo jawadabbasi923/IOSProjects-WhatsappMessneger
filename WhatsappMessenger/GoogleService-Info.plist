@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1093457226948-b4fldm6eqbredsh8b98p7dbg8ndq6bv2.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1093457226948-b4fldm6eqbredsh8b98p7dbg8ndq6bv2</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCD5L-LCyi-S_1BDI-ysc8rBEEKd36zbV8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1093457226948</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>jawad-abbasi.WhatsappMessenger</string>
+	<key>PROJECT_ID</key>
+	<string>whatsappmessenger-a51be</string>
+	<key>STORAGE_BUCKET</key>
+	<string>whatsappmessenger-a51be.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1093457226948:ios:62fbfbedefd988f2c6ed91</string>
+	<key>DATABASE_URL</key>
+	<string>https://whatsappmessenger-a51be.firebaseio.com</string>
+</dict>
+</plist>
