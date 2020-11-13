@@ -9,9 +9,9 @@ import UIKit
 import FirebaseAuth
 
 class RegisterViewController: UIViewController {
-
+    
     private let scrollView : UIScrollView = {
-       
+        
         var scrollView = UIScrollView()
         scrollView.clipsToBounds = true
         
@@ -20,9 +20,9 @@ class RegisterViewController: UIViewController {
     }()
     
     private let imageView : UIImageView = {
-       
+        
         let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "person")
+        imageView.image = UIImage(systemName: "person.circle")
         imageView.tintColor = .gray
         imageView.contentMode = .scaleToFill
         imageView.layer.masksToBounds = true
@@ -34,7 +34,7 @@ class RegisterViewController: UIViewController {
     }()
     
     private let emailTextField : UITextField = {
-       
+        
         var field = UITextField()
         
         field.autocapitalizationType = .none
@@ -53,7 +53,7 @@ class RegisterViewController: UIViewController {
     }()
     
     private let firstNameTextField : UITextField = {
-       
+        
         var field = UITextField()
         
         field.autocapitalizationType = .none
@@ -72,7 +72,7 @@ class RegisterViewController: UIViewController {
     }()
     
     private let lastNameTextField : UITextField = {
-       
+        
         var field = UITextField()
         
         field.autocapitalizationType = .none
@@ -92,7 +92,7 @@ class RegisterViewController: UIViewController {
     
     
     private let passwordField : UITextField = {
-       
+        
         var field = UITextField()
         
         field.autocapitalizationType = .none
@@ -131,7 +131,7 @@ class RegisterViewController: UIViewController {
         super.viewDidLoad()
         
         title = "Log In"
-
+        
         view.backgroundColor = .white
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Register", style: .done, target: self, action: #selector(didTapRegister))
@@ -154,8 +154,8 @@ class RegisterViewController: UIViewController {
         scrollView.isUserInteractionEnabled = true
         imageView.isUserInteractionEnabled = true
         let gesture = UITapGestureRecognizer(target: self, action: #selector(didTappedChangeProfile))
-//        gesture.numberOfTouchesRequired = 1
-//        gesture.numberOfTapsRequired = 1
+        //        gesture.numberOfTouchesRequired = 1
+        //        gesture.numberOfTapsRequired = 1
         
         imageView.addGestureRecognizer(gesture)
     }
@@ -208,22 +208,48 @@ class RegisterViewController: UIViewController {
             return
         }
         
-        FirebaseAuth.Auth.auth().createUser(withEmail: email, password: pass, completion:
-                                                {authResult, error in
-                                                    guard let result = authResult, error == nil else{
-                                                        print("Errorrrr")
-                                                        return
-                                                    }
-                                                    let user = result.user
-                                                    print("Created User: \(user)")
+        DatabaseManager.shared.userExists(with: email, complition:
+                                            {
+                                                [weak self] exists in
+                                                
+                                                guard let strongSelf = self else{
+                                                    return
                                                 }
+                                                
+                                                guard !exists else {
+                                                    print("User Already registered.")
+                                                    strongSelf.alertUserLoginError(message: "User Already Exists.")
+                                                    return
+                                                }
+                                                
+                                                FirebaseAuth.Auth.auth().createUser(withEmail: email, password: pass, completion:
+                                                                                        {authResult, error in
+                                                                                            guard let strongSelf = self else{
+                                                                                                return
+                                                                                            }
+                                                                                            guard let result = authResult, error == nil else{
+                                                                                                print("Errorrrr")
+                                                                                                return
+                                                                                            }
+                                                                                            let user = result.user
+                                                                                            print("Created User: \(user)")
+                                                                                            
+                                                                                            DatabaseManager.shared.insertUser(with: WhatsappUser(firstName: firstName, lastName: lastName, emailAddress: email))
+                                                                                            
+                                                                                            strongSelf.navigationController?.dismiss(animated: true, completion: nil)
+                                                                                        }
+                                                )
+                                                
+                                            }
         )
+        
+        
         
     }
     
-    func alertUserLoginError()  {
+    func alertUserLoginError(message: String = "All Fields Mendatory")  {
         
-        let alert = UIAlertController(title: "Error", message: "All Fields Mandatory", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
         present(alert, animated: true)
         
@@ -237,7 +263,7 @@ class RegisterViewController: UIViewController {
         
         navigationController?.pushViewController(vc, animated: true)
     }
-
+    
 }
 
 

@@ -25,6 +25,7 @@
 		4BD424BE2555AA7D00E77D4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BD424BC2555AA7D00E77D4A /* LaunchScreen.storyboard */; };
 		4BD424C92555AA7D00E77D4A /* WhatsappMessengerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD424C82555AA7D00E77D4A /* WhatsappMessengerTests.swift */; };
 		4BD424D42555AA7D00E77D4A /* WhatsappMessengerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD424D32555AA7D00E77D4A /* WhatsappMessengerUITests.swift */; };
+		4BE68239255EA19900B4EFF7 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE68238255EA19900B4EFF7 /* DatabaseManager.swift */; };
 		87611A17671EA551F723D43B /* Pods_WhatsappMessenger_WhatsappMessengerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A62FBB0FB3B49058B80E27 /* Pods_WhatsappMessenger_WhatsappMessengerUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 		4BD424CF2555AA7D00E77D4A /* WhatsappMessengerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhatsappMessengerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BD424D32555AA7D00E77D4A /* WhatsappMessengerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsappMessengerUITests.swift; sourceTree = "<group>"; };
 		4BD424D52555AA7D00E77D4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4BE68238255EA19900B4EFF7 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		50A62FBB0FB3B49058B80E27 /* Pods_WhatsappMessenger_WhatsappMessengerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhatsappMessenger_WhatsappMessengerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		752D0B906A294803A25EEFE0 /* Pods-WhatsappMessenger-WhatsappMessengerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatsappMessenger-WhatsappMessengerUITests.release.xcconfig"; path = "Target Support Files/Pods-WhatsappMessenger-WhatsappMessengerUITests/Pods-WhatsappMessenger-WhatsappMessengerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9E3A102A4E51C26CEFC37B19 /* Pods_WhatsappMessenger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhatsappMessenger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,6 +128,7 @@
 				4BD424B12555AA7B00E77D4A /* AppDelegate.swift */,
 				4BD424B32555AA7B00E77D4A /* SceneDelegate.swift */,
 				4B5FB2D1255DE66B003A8B17 /* Extensions.swift */,
+				4BE68238255EA19900B4EFF7 /* DatabaseManager.swift */,
 			);
 			path = Resourses;
 			sourceTree = "<group>";
@@ -480,6 +483,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B2DBC7F255DDA5300B92DD6 /* LoginViewController.swift in Sources */,
+				4BE68239255EA19900B4EFF7 /* DatabaseManager.swift in Sources */,
 				4B2DBC84255DDA6800B92DD6 /* RegisterViewController.swift in Sources */,
 				4B2DBC93255DDAA500B92DD6 /* NewConversationViewController.swift in Sources */,
 				4BD424B62555AA7B00E77D4A /* ConversationsViewController.swift in Sources */,
