@@ -12,8 +12,13 @@ target 'WhatsappMessenger' do
   target 'WhatsappMessengerUITests' do
    
   end
+
+# Firebase
 pod 'Firebase/Core'
 pod 'Firebase/Auth'
 pod 'Firebase/Database'
+
+# Facebook
+pod 'FBSDKLoginKit'
 
 end
