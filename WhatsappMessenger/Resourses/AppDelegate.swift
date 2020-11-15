@@ -21,13 +21,56 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             return
         }
         
-        guard let authentication = user.authentication else { return }
+        guard let user = user else {
+            return
+        }
+        
+        print("Did signin with google \(user)")
+        
+        guard let email = user.profile.email,
+              let firstName = user.profile.givenName,
+              let lastName = user.profile.familyName else {
+            return
+        }
+        
+        DatabaseManager.shared.userExists(with: email, complition:
+                                            {
+                                            exists in
+                                                if !exists {
+                                                    // Add to database
+                                                    DatabaseManager.shared.insertUser(with: WhatsappUser(firstName: firstName, lastName: lastName, emailAddress: email))
+                                                }
+                                                
+                                            }
+        )
+        
+        guard let authentication = user.authentication else {
+            print("Missing aut obejct of google user")
+            return
+            
+        }
         let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
                                                        accessToken: authentication.accessToken)
 
+        FirebaseAuth.Auth.auth().signIn(with: credential, completion:
+                                            {
+                                                authResult, error in
+                                                
+                                                guard authResult != nil, error == nil else {
+                                                    print("Failed to login with google credential")
+                                                    return
+                                                }
+                                                
+                                                print("Succesfully signin with google")
+                                                NotificationCenter.default.post(name: .didLoginNotification, object: nil)
+                                                
+                                            }
+        )
     }
     
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+        
+        print("Google User Disconnected")
         
     }
     
