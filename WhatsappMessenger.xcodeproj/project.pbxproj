@@ -255,6 +255,7 @@
 				4BD424AB2555AA7B00E77D4A /* Frameworks */,
 				4BD424AC2555AA7B00E77D4A /* Resources */,
 				C974F9D5C995AB4C9890068E /* [CP] Embed Pods Frameworks */,
+				A15D0525C1D5E21F086DDD9B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -293,6 +294,7 @@
 				4BD424CC2555AA7D00E77D4A /* Frameworks */,
 				4BD424CD2555AA7D00E77D4A /* Resources */,
 				CEF34CF8B88430E5446926E0 /* [CP] Embed Pods Frameworks */,
+				E261D74D9C41878956EB3733 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -441,6 +443,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		A15D0525C1D5E21F086DDD9B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WhatsappMessenger/Pods-WhatsappMessenger-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WhatsappMessenger/Pods-WhatsappMessenger-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WhatsappMessenger/Pods-WhatsappMessenger-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C974F9D5C995AB4C9890068E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -473,6 +492,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WhatsappMessenger-WhatsappMessengerUITests/Pods-WhatsappMessenger-WhatsappMessengerUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E261D74D9C41878956EB3733 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WhatsappMessenger-WhatsappMessengerUITests/Pods-WhatsappMessenger-WhatsappMessengerUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WhatsappMessenger-WhatsappMessengerUITests/Pods-WhatsappMessenger-WhatsappMessengerUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WhatsappMessenger-WhatsappMessengerUITests/Pods-WhatsappMessenger-WhatsappMessengerUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
